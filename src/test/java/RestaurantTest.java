@@ -59,9 +59,16 @@ class RestaurantTest {
     @Test
     public void removing_item_that_does_not_exist_should_throw_exception() {
 
-
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
+    }
+    @Test
+    public void adding_items_from_menu_should_increase_the_cost_by_388(){
+
+        List<String> list = new ArrayList<String>();
+        list.add("Sweet corn soup");
+        list.add("Vegetable lasagne");
+        assertEquals(388,restaurant.getTotalCost(list));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
