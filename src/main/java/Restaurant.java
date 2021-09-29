@@ -56,6 +56,19 @@ public class Restaurant {
         menu.remove(itemToBeRemoved);
     }
 
+    // getTotalCost Method will take a list<String> as parameter and return total amount of items in list
+    public int getTotalCost(List<String> item){
+        int totalCost = 0;
+        for(Item item1: menu){
+            for(int i=0;i< item.size();i++){
+                if(item1.getName().equals(item.get(i))){
+                    totalCost += item1.getPrice();
+                }
+            }
+        }
+        return totalCost;
+    }
+
     public void displayDetails(){
         System.out.println("Restaurant:"+ name + "\n"
                 +"Location:"+ location + "\n"
